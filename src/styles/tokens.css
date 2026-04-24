@@ -1,0 +1,24 @@
+:root {
+  /* Grey */
+  --grey-white: #ffffff;
+  --grey-50: #f7f7f8;
+  --grey-100: #f3f4f5;
+  --grey-200: #ecedee;
+  --grey-300: #cfd2d5;
+  --grey-400: #b6bbc0;
+  --grey-450: #9ea5ab;
+  --grey-500: #868e96;
+  --grey-600: #6b7278;
+  --grey-700: #50555a;
+  --grey-900: #1b1c1e;
+
+  /* Accent */
+  --blue-500: #5054f1;
+  --secondary-50: #eef4ff;
+  --green-500: #04ae56;
+  --success-25: #f0f9f4;
+
+  /* Type */
+  --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system,
+    BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+}

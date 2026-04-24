@@ -1,0 +1,27 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.draft {
+  background: var(--grey-100);
+  color: var(--grey-600);
+}
+
+.in_review {
+  background: var(--secondary-50);
+  color: var(--blue-500);
+}
+
+.confirmed {
+  background: var(--success-25);
+  color: var(--green-500);
+}

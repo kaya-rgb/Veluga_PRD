@@ -1,0 +1,41 @@
+{
+  "desktop": [
+    {
+      "id": "login",
+      "title": "Login",
+      "iframeUrl": "",
+      "description": {
+        "title": "1. 채널 설정",
+        "body": "사용자가 생성한 채널과 관련된 채팅방 설정 페이지.\n\n사용자가 생성한 채널과 관련된 채팅방 설정 페이지. 사용자가 생성한 채널과 관련된 채팅방 설정 페이지. 사용자가 생성한 채널과 관련된 채팅방 설정 페이지."
+      }
+    },
+    {
+      "id": "home",
+      "title": "Home",
+      "iframeUrl": "",
+      "description": {
+        "title": "홈 화면",
+        "body": "홈 화면 설명이 들어갈 자리입니다."
+      }
+    },
+    {
+      "id": "chat",
+      "title": "Chat",
+      "iframeUrl": "",
+      "description": {
+        "title": "채팅 화면",
+        "body": "채팅 화면 설명이 들어갈 자리입니다."
+      }
+    },
+    {
+      "id": "settings",
+      "title": "Settings",
+      "iframeUrl": "",
+      "description": {
+        "title": "설정 화면",
+        "body": "설정 화면 설명이 들어갈 자리입니다."
+      }
+    }
+  ],
+  "mobile": []
+}

@@ -1,0 +1,14 @@
+{
+  "desktop": [
+    {
+      "id": "placeholder",
+      "title": "Placeholder",
+      "iframeUrl": "",
+      "description": {
+        "title": "기본 화면",
+        "body": "설명을 입력해 주세요."
+      }
+    }
+  ],
+  "mobile": []
+}

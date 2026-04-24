@@ -1,0 +1,17 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--grey-white);
+}
+
+.main {
+  flex: 1;
+  margin-left: 200px;
+  padding: 50px 320px 50px 120px;
+}
+
+.content {
+  width: 1280px;
+  max-width: 100%;
+}

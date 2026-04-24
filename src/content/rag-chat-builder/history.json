@@ -1,0 +1,16 @@
+[
+  {
+    "version": "v1.1",
+    "status": "draft",
+    "author": { "role": "PD", "name": "김지원" },
+    "changes": "GNB 아이콘 변경",
+    "figmaUrl": "https://www.figma.com/design/nEAR7ubgl3pitRhfOqglxz/"
+  },
+  {
+    "version": "v1.1",
+    "status": "in_review",
+    "author": { "role": "PD", "name": "김지원" },
+    "changes": "디자인 시스템 개편 컬러 적용",
+    "figmaUrl": "https://www.figma.com/design/nEAR7ubgl3pitRhfOqglxz/"
+  }
+]

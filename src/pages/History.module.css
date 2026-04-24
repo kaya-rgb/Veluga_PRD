@@ -1,0 +1,70 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.table {
+  border: 1px solid var(--grey-300);
+  display: flex;
+  flex-direction: column;
+}
+
+.headRow,
+.row {
+  display: flex;
+  align-items: stretch;
+}
+
+.headCell,
+.cell {
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--grey-300);
+  border-bottom: 1px solid var(--grey-300);
+  text-align: center;
+}
+
+.headCell:last-child,
+.cell:last-child {
+  border-right: none;
+}
+
+.row:last-child .cell {
+  border-bottom: none;
+}
+
+.headCell {
+  background: var(--grey-100);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--grey-600);
+  line-height: 1.3;
+}
+
+.cellText {
+  display: inline-flex;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--grey-900);
+  line-height: 1.3;
+}
+
+.roleLabel {
+  color: var(--grey-500);
+}
+
+.link {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--grey-900);
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: var(--blue-500);
+}
