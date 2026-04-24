@@ -1,6 +1,43 @@
-# 기획문서 템플릿 — 디자인 시스템 레퍼런스
+# 기획문서 템플릿 — 프로젝트 가이드
 
 이 프로젝트의 디자인 초안은 Figma 파일 `기획문서_템플릿` (fileKey: `nEAR7ubgl3pitRhfOqglxz`)을 기준으로 합니다. 화면을 만들 때는 아래 컴포넌트와 토큰을 **반드시 재사용**하고, 새 스타일을 즉흥적으로 만들지 마세요.
+
+## 기술 스택
+- **Vite + React 18 + TypeScript** (SPA, 기본 데스크톱 1920×1080)
+- **react-router-dom v6** (클라이언트 라우팅)
+- **react-markdown + remark-gfm** (Overview/Description 마크다운 렌더)
+- **CSS Modules** (`*.module.css`) — Tailwind 사용 안 함. 디자인 토큰은 `src/styles/tokens.css` 의 CSS 변수
+- Pretendard 폰트 — index.html에서 jsdelivr CDN 로드
+
+## 프로젝트 구조
+```
+src/
+  main.tsx, App.tsx
+  styles/ (tokens.css, global.css)
+  layout/ (Layout, Sidebar, Footer)
+  components/ (PageHeader, Tabs, StateTag)
+  pages/ (Home, History, Overview, ScreenSpec)
+  context/ProductContext.tsx      # 선택된 제품 상태 + localStorage
+  data/products.ts, data/content.ts  # import.meta.glob 로 컨텐츠 로드
+  content/{productId}/             # 제품별 컨텐츠 (마크다운 + JSON)
+    meta.json                      # Home 카드 표시용
+    overview/{version}.md          # 버전 탭마다 .md 파일 하나
+    history.json                   # 변경 이력 배열
+    screen-spec.json               # Desktop/Mobile 섹션
+  assets/logo.svg
+```
+
+## 컨텐츠 추가/수정 규칙
+- **새 버전 Overview**: `src/content/{제품}/overview/v1.3.md` 추가만 하면 탭 자동 생성 (`getOverviewVersions` 가 glob 으로 수집)
+- **새 제품**: `src/content/{새-id}/` 폴더에 4종 파일 추가 + `src/data/products.ts` 의 import 배열에 meta.json 추가
+- **Screen Spec description**: `{ title, body }` 만 사용. `heading`/`items[]` 같은 필드 추가 금지 (중복 렌더링 버그 있었음)
+
+## 배포
+- **GitHub**: https://github.com/kaya-rgb/Veluga_PRD (main)
+- **Production**: https://veluga-prd.vercel.app/
+- **배포 플로우**: `git push` → Vercel 자동 빌드(Vite preset) → 1~2분 후 반영
+- `vercel.json` 의 SPA rewrite 로 `/:productId/overview` 등 직접 접근도 동작
+- 로컬 인증: macOS keychain credential helper 설정됨
 
 ## 참조 Figma 노드
 - 디자인 시스템 컴포넌트 모음 노드: `5:97`
