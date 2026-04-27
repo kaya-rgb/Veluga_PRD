@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { findProduct } from '../data/products';
+import { findProduct, products } from '../data/products';
 import { getOverviewMarkdown, getOverviewVersions } from '../data/content';
 import PageHeader from '../components/PageHeader';
 import Tabs from '../components/Tabs';
@@ -10,6 +10,7 @@ import styles from './Overview.module.css';
 
 export default function Overview() {
   const { productId } = useParams<{ productId: string }>();
+  const navigate = useNavigate();
   const product = findProduct(productId);
 
   const versions = useMemo(
@@ -27,7 +28,11 @@ export default function Overview() {
   return (
     <div className={styles.page}>
       <PageHeader
-        breadcrumb={product.shortTitle}
+        breadcrumbSelect={{
+          options: products.map((p) => ({ label: p.shortTitle, value: p.id })),
+          selected: product.shortTitle,
+          onSelect: (id) => navigate(`/${id}/overview`),
+        }}
         title="Overview"
         description="프로젝트의 배경, 목표, 범위를 정의합니다."
       />

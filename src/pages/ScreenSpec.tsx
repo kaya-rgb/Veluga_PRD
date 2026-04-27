@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { findProduct } from '../data/products';
+import { findProduct, products } from '../data/products';
 import { getScreenSpec, ScreenSection } from '../data/content';
 import PageHeader from '../components/PageHeader';
 import Tabs from '../components/Tabs';
@@ -67,6 +67,7 @@ function Section({ section, defaultOpen }: { section: ScreenSection; defaultOpen
 
 export default function ScreenSpec() {
   const { productId } = useParams<{ productId: string }>();
+  const navigate = useNavigate();
   const product = findProduct(productId);
   const [platform, setPlatform] = useState<Platform>('desktop');
 
@@ -82,7 +83,11 @@ export default function ScreenSpec() {
   return (
     <div className={styles.page}>
       <PageHeader
-        breadcrumb={product.shortTitle}
+        breadcrumbSelect={{
+          options: products.map((p) => ({ label: p.shortTitle, value: p.id })),
+          selected: product.shortTitle,
+          onSelect: (id) => navigate(`/${id}/screen-spec`),
+        }}
         title="Screen Spec"
         description="화면별 구성 요소와 설명을 정의합니다."
       />
