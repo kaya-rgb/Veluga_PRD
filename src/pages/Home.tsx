@@ -17,7 +17,7 @@ export default function Home() {
     <div className={styles.page}>
       <PageHeader
         title="Home"
-        description="원하는 기획서의 섹션을 선택하면 해당 메뉴의 기획서 내용이 노출됩니다."
+        description="원하는 기획서의 섹션을 선택하면 해당 Overview로 이동합니다."
       />
       <div className={styles.grid}>
         {products.map((p) => (
