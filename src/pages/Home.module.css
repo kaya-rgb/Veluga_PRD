@@ -43,7 +43,7 @@
   line-height: 1.5;
   color: var(--grey-500);
   width: 100%;
-  text-align: right;
+  text-align: left;
 }
 
 .cardTitle {
