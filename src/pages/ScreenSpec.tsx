@@ -59,8 +59,8 @@ function Section({ section, defaultOpen }: { section: ScreenSection; defaultOpen
                     <circle cx="7" cy="4" r="0.75" fill="currentColor" />
                   </svg>
                 </span>
-                <span className={styles.tooltip}>화면 구성 요소와 기능을 설명합니다.</span>
               </span>
+              <span className={styles.tooltip}>화면의 숫자를 클릭하면 해당 기능의{'\n'}설명이 Description에 노출됩니다.</span>
             </div>
             <div className={styles.descBody}>
               <p className={styles.descTitle}>{section.description.title}</p>
