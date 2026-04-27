@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 16px;
   border-radius: 10px;
   background: var(--grey-50);
   cursor: pointer;
@@ -65,11 +65,29 @@
 .frame {
   flex: 1 0 0;
   min-width: 0;
+  height: 547px;
   border: 1px solid var(--grey-300);
   border-radius: 10px;
-  overflow: hidden;
-  aspect-ratio: 4096 / 2359;
+  overflow-y: auto;
+  overflow-x: hidden;
   background: var(--grey-white);
+}
+
+.frame::-webkit-scrollbar {
+  width: 12px;
+}
+
+.frame::-webkit-scrollbar-track {
+  background: var(--grey-200);
+  border-radius: 999px;
+  margin: 6px 0;
+}
+
+.frame::-webkit-scrollbar-thumb {
+  background: var(--grey-400);
+  border-radius: 999px;
+  border: 4px solid transparent;
+  background-clip: content-box;
 }
 
 .iframe {
@@ -100,14 +118,39 @@
 
 .desc {
   width: 320px;
+  height: 547px;
   background: var(--grey-50);
+  border: 1px solid var(--grey-300);
   border-radius: 10px;
-  padding: 16px 12px 16px 16px;
+  padding: 16px 6px 16px 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   overflow-y: auto;
-  max-height: 600px;
+  box-sizing: border-box;
+}
+
+.desc::-webkit-scrollbar {
+  width: 12px;
+}
+
+.desc::-webkit-scrollbar-track {
+  background: var(--grey-200);
+  border-radius: 999px;
+  margin: 6px 0;
+}
+
+.desc::-webkit-scrollbar-thumb {
+  background: var(--grey-400);
+  border-radius: 999px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+}
+
+.descLabelRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .descLabel {
@@ -115,6 +158,54 @@
   font-weight: 600;
   color: var(--grey-500);
   line-height: 1.3;
+}
+
+.infoWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.infoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  color: var(--grey-500);
+  cursor: default;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--grey-900);
+  color: var(--grey-white);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--grey-900);
+}
+
+.infoWrap:hover .tooltip {
+  display: block;
 }
 
 .descBody {

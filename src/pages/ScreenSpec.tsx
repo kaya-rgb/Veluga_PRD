@@ -49,7 +49,19 @@ function Section({ section, defaultOpen }: { section: ScreenSection; defaultOpen
             )}
           </div>
           <aside className={styles.desc}>
-            <p className={styles.descLabel}>Description</p>
+            <div className={styles.descLabelRow}>
+              <p className={styles.descLabel}>Description</p>
+              <span className={styles.infoWrap}>
+                <span className={styles.infoIcon}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="6.5" stroke="currentColor" />
+                    <rect x="6.5" y="6" width="1" height="4.5" rx="0.5" fill="currentColor" />
+                    <circle cx="7" cy="4" r="0.75" fill="currentColor" />
+                  </svg>
+                </span>
+                <span className={styles.tooltip}>화면 구성 요소와 기능을 설명합니다.</span>
+              </span>
+            </div>
             <div className={styles.descBody}>
               <p className={styles.descTitle}>{section.description.title}</p>
               <div className={styles.descText}>
