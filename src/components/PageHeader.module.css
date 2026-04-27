@@ -51,13 +51,15 @@
 }
 
 .dropdownItem {
-  padding: 10px 16px;
+  margin: 0 4px;
+  padding: 10px 12px;
   font-family: 'Pretendard', sans-serif;
   font-size: 15px;
   font-weight: 500;
   color: var(--grey-700);
   cursor: pointer;
   white-space: nowrap;
+  border-radius: 6px;
 }
 
 .dropdownItem:hover {
