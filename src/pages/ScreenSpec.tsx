@@ -89,7 +89,7 @@ export default function ScreenSpec() {
           onSelect: (id) => navigate(`/${id}/screen-spec`),
         }}
         title="Screen Spec"
-        description="화면별 구성 요소와 설명을 정의합니다."
+        description="화면 설계와 기능 정의를 확인할 수 있습니다."
       />
       <div className={styles.body}>
         <Tabs
