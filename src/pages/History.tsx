@@ -1,5 +1,5 @@
-import { useParams } from 'react-router-dom';
-import { findProduct } from '../data/products';
+import { useParams, useNavigate } from 'react-router-dom';
+import { findProduct, products } from '../data/products';
 import { getHistory, HistoryEntry } from '../data/content';
 import PageHeader from '../components/PageHeader';
 import StateTag from '../components/StateTag';
@@ -44,6 +44,7 @@ const columns: {
 
 export default function History() {
   const { productId } = useParams<{ productId: string }>();
+  const navigate = useNavigate();
   const product = findProduct(productId);
   const entries = productId ? getHistory(productId) : [];
 
@@ -52,7 +53,11 @@ export default function History() {
   return (
     <div className={styles.page}>
       <PageHeader
-        breadcrumb={product.shortTitle}
+        breadcrumbSelect={{
+          options: products.map((p) => ({ label: p.shortTitle, value: p.id })),
+          selected: product.shortTitle,
+          onSelect: (id) => navigate(`/${id}/history`),
+        }}
         title="History"
         description="문서 정보와 변경 이력을 보여줍니다."
       />
